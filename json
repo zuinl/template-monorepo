@@ -1,0 +1,38 @@
+{
+  "changesets": [
+    {
+      "releases": [
+        {
+          "name": "@template/app-header",
+          "type": "patch"
+        },
+        {
+          "name": "@template/root-config",
+          "type": "patch"
+        }
+      ],
+      "summary": "inclui vite hooks com staged check",
+      "id": "fine-schools-walk"
+    }
+  ],
+  "releases": [
+    {
+      "name": "@template/app-header",
+      "type": "patch",
+      "oldVersion": "0.0.1",
+      "changesets": [
+        "fine-schools-walk"
+      ],
+      "newVersion": "0.0.2"
+    },
+    {
+      "name": "@template/root-config",
+      "type": "patch",
+      "oldVersion": "0.0.1",
+      "changesets": [
+        "fine-schools-walk"
+      ],
+      "newVersion": "0.0.2"
+    }
+  ]
+}

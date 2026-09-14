@@ -1,3 +1,5 @@
+import { Button } from "@libs/design-system";
+
 export default function Root(props: any) {
-  return <section>{props.name} is mounted!</section>;
+  return <Button>Click me</Button>;
 }

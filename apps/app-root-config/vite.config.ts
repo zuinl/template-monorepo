@@ -13,7 +13,15 @@ import {
  * Pacotes resolvidos em runtime pelo import map, nunca empacotados pelo Vite.
  * Mesma lista é usada em dev (`externalImportMapPlugin`) e em build (`build.rolldownOptions.external`).
  */
-const EXTERNALS = [] as const;
+const EXTERNALS = [
+  "react",
+  "react-dom",
+  "single-spa",
+  "single-spa-react",
+  "@mui/material",
+  "@emotion/react",
+  "@emotion/styled",
+] as const;
 
 const ignorePatterns = [
   "**/dist/**",

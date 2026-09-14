@@ -1,5 +1,5 @@
 import { defineConfig } from "vite-plus";
-import { createMfeConfig, APP_PORTS } from "@template/vite-common";
+import { createMfeConfig, APP_PORTS } from "../../libs/vite-common/src/index";
 import { name } from "./package.json";
 
 export default defineConfig(

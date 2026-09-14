@@ -1,8 +1,3 @@
 {
-  "compilerOptions": {
-    "jsx": "react-jsx",
-    "esModuleInterop": true
-  },
-  "include": ["src/**/*"],
-  "exclude": ["src/**/*.test*"]
+  "extends": "../../tsconfig.json"
 }

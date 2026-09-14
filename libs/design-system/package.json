@@ -1,0 +1,24 @@
+{
+  "name": "@template/design-system",
+  "description": "Design system para monorepo de MFEs",
+  "type": "module",
+  "scripts": {
+    "check": "vp check",
+    "check:fix": "vp check --fix",
+    "lint": "vp lint",
+    "lint:fix": "vp lint --fix",
+    "fmt": "vp fmt . --write",
+    "test": "vp test watch",
+    "test:cov": "vp test --coverage"
+  },
+  "dependencies": {
+    "@emotion/react": "catalog:mui",
+    "@emotion/styled": "catalog:mui",
+    "@mui/material": "catalog:mui"
+  },
+  "devDependencies": {
+    "@types/node": "catalog:",
+    "@types/react": "catalog:react",
+    "typescript": "catalog:"
+  }
+}

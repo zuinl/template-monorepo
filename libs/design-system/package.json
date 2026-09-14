@@ -1,15 +1,15 @@
 {
   "name": "@template/design-system",
-  "version": "0.0.1",
   "description": "Design system para monorepo de MFEs",
-  "author": "Leonardo Zuin <leonardosoareszuin@gmail.com>",
   "type": "module",
-  "exports": {
-    ".": "./src/index.ts"
-  },
   "scripts": {
-    "test": "vp test",
-    "check": "vp check"
+    "check": "vp check",
+    "check:fix": "vp check --fix",
+    "lint": "vp lint",
+    "lint:fix": "vp lint --fix",
+    "fmt": "vp fmt . --write",
+    "test": "vp test watch",
+    "test:cov": "vp test --coverage"
   },
   "dependencies": {
     "@emotion/react": "catalog:mui",
@@ -19,8 +19,6 @@
   "devDependencies": {
     "@types/node": "catalog:",
     "@types/react": "catalog:react",
-    "typescript": "catalog:",
-    "vite": "catalog:vite",
-    "vite-plus": "catalog:vite"
+    "typescript": "catalog:"
   }
 }

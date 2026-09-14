@@ -1,9 +1,16 @@
 {
   "compilerOptions": {
+    "jsx": "react-jsx",
     "noEmit": true,
     "module": "nodenext",
     "moduleResolution": "nodenext",
     "allowImportingTsExtensions": true,
-    "esModuleInterop": true
-  }
+    "esModuleInterop": true,
+    "rootDir": ".",
+    "paths": {
+      "@libs/design-system": ["./libs/design-system/src/index.ts"],
+      "@libs/vite-common": ["./libs/vite-common/src/index.ts"]
+    }
+  },
+  "include": ["apps/**/*", "libs/**/*"]
 }

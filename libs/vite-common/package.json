@@ -1,6 +1,5 @@
 {
   "name": "@template/vite-common",
-  "version": "0.0.0",
   "description": "Configurações e utilitários comuns para build dos MFEs",
   "type": "module",
   "exports": {

@@ -1,3 +1,3 @@
-- [ ] Adicionar template para gerador de componeonte, biblioteca e hooks
-- Sem version
+- Adicionar template para gerador de componeonte, biblioteca e hooks
+- Sem version: entender abordagem do changeset para funcionar via PR/pipeline, sem exigir do dev
 - Resolver externals no root

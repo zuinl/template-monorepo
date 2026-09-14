@@ -2,6 +2,9 @@
   "name": "monorepo-template",
   "private": true,
   "type": "module",
+  "scripts": {
+    "precommit": "pnpm changeset"
+  },
   "devDependencies": {
     "@changesets/cli": "catalog:",
     "typescript": "catalog:",

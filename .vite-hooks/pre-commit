@@ -1,0 +1,24 @@
+#!/usr/bin/env sh
+
+# 1. Verifica se existe changeset pendente
+if ! pnpm exec changeset status --output json > /dev/null 2>&1; then
+  echo "⚠️  Falta changeset para as alterações realizadas."
+  echo "❓  Execute 'pnpm changeset' e defina a versão antes de commitar."
+  exit 1
+fi
+
+# 2. Verifica se o changeset está staged para este commit
+if ! git diff --cached --name-only --diff-filter=d | grep -q '^\.changeset/.*\.md$'; then
+  echo "⚠️  O changeset foi criado, mas não consta nos arquivos staged para este commit."
+  echo "❓  Revise o changeset e execute 'git add .changeset/' e tente novamente."
+  exit 1
+fi
+
+# 3. Verifica se há arquivos staged dentro do escopo de lint
+STAGED_LINT_FILES=$(git diff --cached --name-only --diff-filter=d | grep -E '\.(js|jsx|ts|tsx|vue|svelte)$' || true)
+
+if [ -n "$STAGED_LINT_FILES" ]; then
+  pnpm exec vp staged
+else
+  echo "ℹ️  Nenhum arquivo staged no escopo de lint/format. Pulando vp staged."
+fi

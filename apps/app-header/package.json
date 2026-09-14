@@ -1,7 +1,7 @@
 {
   "name": "@template/app-header",
-  "private": "true",
-  "description": "Cabeçalho principal da aplicação",
+  "version": "0.0.1",
+  "description": "Cabeçalho da aplicação",
   "author": {
     "name": "Leonardo Zuin",
     "email": "leonardosoareszuin@gmail.com"

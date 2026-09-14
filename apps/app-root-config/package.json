@@ -1,5 +1,6 @@
 {
   "name": "@template/root-config",
+  "version": "0.0.1",
   "scripts": {
     "dev": "vp dev",
     "check": "vp check",

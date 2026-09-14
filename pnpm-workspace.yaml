@@ -10,6 +10,8 @@ catalogPrune: true
 
 catalog:
   '@changesets/cli': ^3.0.2
+  husky: ^9.1.7
+  lint-staged: ^17.5.1
   typescript: ^7.0.2
 catalogs:
   react:

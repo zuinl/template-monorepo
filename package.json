@@ -2,11 +2,19 @@
   "name": "monorepo-template",
   "private": true,
   "type": "module",
+  "scripts": {
+    "prepare": "husky"
+  },
   "devDependencies": {
     "@changesets/cli": "catalog:",
+    "husky": "catalog:",
+    "lint-staged": "catalog:",
     "typescript": "catalog:",
     "vite": "catalog:vite",
     "vite-plus": "catalog:vite"
+  },
+  "lint-staged": {
+    "*": "pnpm exec changeset check --since HEAD~1 || (echo '⚠️  Falta criar o changeset para as alterações! Execute: pnpm changeset' && exit 1)"
   },
   "devEngines": {
     "packageManager": {

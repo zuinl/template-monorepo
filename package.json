@@ -1,0 +1,21 @@
+{
+  "name": "monorepo-template",
+  "private": true,
+  "type": "module",
+  "devDependencies": {
+    "@changesets/cli": "catalog:",
+    "typescript": "catalog:",
+    "vite": "catalog:vite",
+    "vite-plus": "catalog:vite"
+  },
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "12.3.4",
+      "onFail": "error"
+    }
+  },
+  "engines": {
+    "node": ">=26.8.2"
+  }
+}

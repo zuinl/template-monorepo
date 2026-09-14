@@ -1,0 +1,12 @@
+{
+  "imports": {
+    "react": "https://esm.sh/react@19.3.0",
+    "react/jsx-runtime": "https://esm.sh/react@19.3.0/jsx-runtime",
+    "react/jsx-dev-runtime": "https://esm.sh/react@19.3.0/jsx-dev-runtime",
+    "react-dom": "https://esm.sh/react-dom@19.3.0",
+    "react-dom/client": "https://esm.sh/react-dom@19.3.0/client",
+    "single-spa": "https://esm.sh/single-spa@6.0.3",
+    "single-spa-react": "https://esm.sh/single-spa-react@6.0.2",
+    "@template/app-header": "http://localhost:4205/main.js"
+  }
+}

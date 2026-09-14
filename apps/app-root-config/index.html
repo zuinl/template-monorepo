@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Template de Monorepo Microfrontend" />
+
+    <title>Monorepo Microfrontend</title>
+
+    <!-- SSI injeta o importmap da CDN em cada request -->
+    <script type="overridable-importmap">
+      <!--# include virtual="/importmap-proxy" -->
+    </script>
+
+    <!-- Explicitando o tipo de import map (native). Evita ambiguidade em bump de versão da lib. Deve vir ANTES do import-map-overrides.js. -->
+    <meta name="importmap-type" content="importmap" />
+
+    <meta name="import-map-overrides-domains" content="allowlist:localhost" />
+
+    <link rel="dns-prefetch" href="https://esm.sh" />
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
+
+    <link rel="preconnect" href="https://esm.sh" crossorigin />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+
+    <link
+      rel="modulepreload"
+      href="https://esm.sh/single-spa@6.0.3"
+      crossorigin
+      fetchpriority="high"
+    />
+    <link
+      rel="modulepreload"
+      href="https://esm.sh/single-spa-layout@3.0.0?external=single-spa"
+      crossorigin
+      fetchpriority="high"
+    />
+    <link rel="modulepreload" href="https://esm.sh/react@19.3.0" crossorigin fetchpriority="high" />
+    <link
+      rel="modulepreload"
+      href="https://esm.sh/react@19.3.0/jsx-runtime?external=react"
+      crossorigin
+      fetchpriority="high"
+    />
+    <link
+      rel="modulepreload"
+      href="https://esm.sh/react-dom@19.3.0?external=react"
+      crossorigin
+      fetchpriority="high"
+    />
+    <link
+      rel="modulepreload"
+      href="https://esm.sh/react-dom@19.3.0/client?external=react"
+      crossorigin
+      fetchpriority="high"
+    />
+
+    <link
+      rel="modulepreload"
+      href="https://esm.sh/single-spa-react@6.0.2?external=react,react-dom,single-spa"
+      crossorigin
+      fetchpriority="low"
+    />
+
+    <link rel="stylesheet" href="/root.css" />
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/import-map-overrides@5.1.1/dist/import-map-overrides.js"
+      defer
+    ></script>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+
+    <div class="loading" aria-live="polite" aria-busy="true">
+      <div class="loading-spinner"></div>
+      <div class="loading-text"><span>Carregando</span><span class="loading-dots"></span></div>
+    </div>
+
+    <script type="module">
+      import("./src/template-root-config.ts");
+    </script>
+
+    <import-map-overrides-full
+      show-when-local-storage="devtools"
+      dev-libs
+    ></import-map-overrides-full>
+
+    <script>
+      window.addEventListener("single-spa:first-mount", () => {
+        const loader = document.querySelector(".loading");
+        if (loader) {
+          loader.classList.add("hidden");
+          setTimeout(() => loader.remove(), 300);
+        }
+      });
+    </script>
+  </body>
+</html>

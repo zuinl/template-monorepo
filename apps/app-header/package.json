@@ -1,0 +1,23 @@
+{
+  "name": "@template/app-header",
+  "private": "true",
+  "description": "Cabeçalho principal da aplicação",
+  "author": {
+    "name": "Leonardo Zuin",
+    "email": "leonardosoareszuin@gmail.com"
+  },
+  "scripts": {
+    "start": "vp dev",
+    "build": "vp build"
+  },
+  "dependencies": {
+    "@types/react": "catalog:react",
+    "@types/react-dom": "catalog:react",
+    "react": "catalog:react",
+    "react-dom": "catalog:react",
+    "single-spa-react": "catalog:single-spa"
+  },
+  "devDependencies": {
+    "@template/vite-common": "workspace:*"
+  }
+}

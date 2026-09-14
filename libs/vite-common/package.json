@@ -1,0 +1,16 @@
+{
+  "name": "@template/vite-common",
+  "version": "0.0.0",
+  "description": "Configurações e utilitários comuns para build dos MFEs",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./package.json": "./package.json"
+  },
+  "scripts": {
+    "check": "vp check"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "catalog:vite"
+  }
+}

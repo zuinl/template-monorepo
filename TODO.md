@@ -1,0 +1,3 @@
+- [ ] Adicionar template para gerador de componeonte, biblioteca e hooks
+- Sem version
+- Resolver externals no root

@@ -1,0 +1,33 @@
+packages:
+  - apps/*
+  - packages/*
+  - tools/*
+  - libs/*
+
+engineStrict: true
+catalogMode: prefer
+catalogPrune: true
+
+catalog:
+  '@changesets/cli': ^3.0.2
+  typescript: ^7.0.2
+catalogs:
+  react:
+    react: ~19.3.0
+    react-dom: ~19.3.0
+    "@types/react": ~19.3.0
+    "@types/react-dom": ~19.3.0
+  single-spa:
+    single-spa: ~6.0.3
+    single-spa-react: ~6.0.2
+  vite:
+    "@vitejs/plugin-react": "^6.1.1"
+    vite: npm:@voidzero-dev/vite-plus-core@0.3.1
+    vite-plus: 0.3.1
+overrides:
+  vite@*: "catalog:vite"
+peerDependencyRules:
+  allowAny:
+    - vite
+  allowedVersions:
+    vite: "*"

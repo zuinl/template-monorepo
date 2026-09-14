@@ -1,0 +1,9 @@
+#!/usr/bin/env sh
+# .husky/pre-commit
+
+# 1. Verifica se existe changeset pendente
+if ! pnpm exec changeset status --output json > /dev/null 2>&1; then
+  echo "⚠️  Falta changeset para as alterações realizadas."
+  echo "❓  Execute 'pnpm changeset' e defina a versão antes de commitar."
+  exit 1
+fi

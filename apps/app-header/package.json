@@ -20,6 +20,7 @@
   "dependencies": {
     "@emotion/react": "catalog:mui",
     "@emotion/styled": "catalog:mui",
+    "@mui/icons-material": "catalog:mui",
     "@mui/material": "catalog:mui",
     "@types/react": "catalog:react",
     "@types/react-dom": "catalog:react",

@@ -110,6 +110,9 @@ catalogs:
     '@changesets/cli':
       specifier: ^3.0.2
       version: 3.0.2
+    '@mui/icons-material':
+      specifier: ^9.4.0
+      version: 9.4.0
     '@types/node':
       specifier: ^26
       version: 26.5.1
@@ -163,6 +166,10 @@ overrides:
 importers:
 
   .:
+    dependencies:
+      '@mui/icons-material':
+        specifier: 'catalog:'
+        version: 9.4.0(@mui/material@9.4.0(@emotion/react@11.14.0(@types/react@19.3.0)(react@19.3.0))(@emotion/styled@11.14.1(@emotion/react@11.14.0(@types/react@19.3.0)(react@19.3.0))(@types/react@19.3.0)(react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(@types/react@19.3.0)(react@19.3.0)
     devDependencies:
       '@changesets/cli':
         specifier: 'catalog:'
@@ -203,10 +210,6 @@ importers:
       single-spa-react:
         specifier: catalog:single-spa
         version: 6.0.2(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(react@19.3.0)
-    devDependencies:
-      '@template/vite-common':
-        specifier: workspace:*
-        version: link:../../libs/vite-common
 
   apps/app-root-config:
     dependencies:
@@ -242,12 +245,6 @@ importers:
       typescript:
         specifier: 'catalog:'
         version: 7.0.2
-      vite:
-        specifier: catalog:vite
-        version: '@voidzero-dev/vite-plus-core@0.3.1(@types/node@26.5.1)(jiti@2.7.0)(terser@5.51.2)(typescript@7.0.2)(yaml@2.9.0)'
-      vite-plus:
-        specifier: catalog:vite
-        version: 0.3.1(@types/node@26.5.1)(jiti@2.7.0)(terser@5.51.2)(typescript@7.0.2)(yaml@2.9.0)
 
   libs/vite-common:
     devDependencies:
@@ -458,6 +455,17 @@ packages:
 
   '@mui/core-downloads-tracker@9.4.0':
     resolution: {integrity: sha512-d+gIYM1raJP87yrVQcVg+Q3vycVMArMkgu/TjJLi2vTvO9FHKWNRR1xs9nnN4eLpM9nGxxm02UMvc9BrmcUKvQ==}
+
+  '@mui/icons-material@9.4.0':
+    resolution: {integrity: sha512-5PVgBYtLOXTk6u0YUAjoV9GoTUQDbeZ8g+pus2h0GphLT/rpmftRnB5D/Kw6QCAovB7EyBX7UxKdZqPBBAHUKw==}
+    engines: {node: '>=14.0.0'}
+    peerDependencies:
+      '@mui/material': ^9.4.0
+      '@types/react': ^17.0.0 || ^18.0.0 || ^19.0.0
+      react: ^17.0.0 || ^18.0.0 || ^19.0.0
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
 
   '@mui/material@9.4.0':
     resolution: {integrity: sha512-6KKUIvkQ2r/s48s9VZV9JEZ1W2dRa7RndVsF+Ipx4CYxDOQeozeRsS5r9NiheFf8A5hpbqJJIGoX7hjg5X4XUw==}
@@ -2197,6 +2205,14 @@ snapshots:
       yaml: 2.9.0
 
   '@mui/core-downloads-tracker@9.4.0': {}
+
+  '@mui/icons-material@9.4.0(@mui/material@9.4.0(@emotion/react@11.14.0(@types/react@19.3.0)(react@19.3.0))(@emotion/styled@11.14.1(@emotion/react@11.14.0(@types/react@19.3.0)(react@19.3.0))(@types/react@19.3.0)(react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(@types/react@19.3.0)(react@19.3.0)':
+    dependencies:
+      '@babel/runtime': 7.29.7
+      '@mui/material': 9.4.0(@emotion/react@11.14.0(@types/react@19.3.0)(react@19.3.0))(@emotion/styled@11.14.1(@emotion/react@11.14.0(@types/react@19.3.0)(react@19.3.0))(@types/react@19.3.0)(react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
+      react: 19.3.0
+    optionalDependencies:
+      '@types/react': 19.3.0
 
   '@mui/material@9.4.0(@emotion/react@11.14.0(@types/react@19.3.0)(react@19.3.0))(@emotion/styled@11.14.1(@emotion/react@11.14.0(@types/react@19.3.0)(react@19.3.0))(@types/react@19.3.0)(react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)':
     dependencies:

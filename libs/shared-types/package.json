@@ -1,0 +1,11 @@
+{
+  "name": "@template/shared-types",
+  "description": "Tipagens comuns de duas ou mais aplicações MFE",
+  "type": "module",
+  "scripts": {
+    "fmt": "vp fmt . --write"
+  },
+  "devDependencies": {
+    "typescript": "catalog:"
+  }
+}

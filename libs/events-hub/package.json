@@ -1,0 +1,18 @@
+{
+  "name": "@template/events-hub",
+  "description": "Central de eventos para comunicação entre MFEs",
+  "type": "module",
+  "scripts": {
+    "check": "vp check",
+    "check:fix": "vp check --fix",
+    "lint": "vp lint",
+    "lint:fix": "vp lint --fix",
+    "fmt": "vp fmt . --write",
+    "test": "vp test watch",
+    "test:cov": "vp test --coverage"
+  },
+  "devDependencies": {
+    "@types/node": "catalog:",
+    "typescript": "catalog:"
+  }
+}

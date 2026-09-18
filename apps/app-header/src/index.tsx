@@ -1,5 +1,10 @@
 import { Header } from "./components/header";
+import { HeaderProvider } from "./contexts";
 
 export const HeaderMain = () => {
-  return <Header></Header>;
+  return (
+    <HeaderProvider>
+      <Header></Header>
+    </HeaderProvider>
+  );
 };

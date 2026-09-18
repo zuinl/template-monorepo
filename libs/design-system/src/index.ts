@@ -1,7 +1,7 @@
 export { Button } from "./components/button/index.tsx";
 export { FatalError } from "./components/fatal-error/index.tsx";
 export { FlexItem } from "./components/flex-item/index.tsx";
-export { ThemeProvider } from "./theme.tsx";
+export { ThemeProvider, getCurrentTheme } from "./theme.tsx";
 export { AppBar } from "./components/app-bar/index.tsx";
 export { Box } from "./components/box/index.tsx";
 export { Toolbar } from "./components/toolbar/index.tsx";

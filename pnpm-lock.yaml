@@ -110,9 +110,6 @@ catalogs:
     '@changesets/cli':
       specifier: ^3.0.2
       version: 3.0.2
-    '@mui/icons-material':
-      specifier: ^9.4.0
-      version: 9.4.0
     '@types/node':
       specifier: ^26
       version: 26.5.1
@@ -126,6 +123,9 @@ catalogs:
     '@emotion/styled':
       specifier: ^11.14.1
       version: 11.14.1
+    '@mui/icons-material':
+      specifier: ^9.4.0
+      version: 9.4.0
     '@mui/material':
       specifier: ^9.4.0
       version: 9.4.0
@@ -166,10 +166,6 @@ overrides:
 importers:
 
   .:
-    dependencies:
-      '@mui/icons-material':
-        specifier: 'catalog:'
-        version: 9.4.0(@mui/material@9.4.0(@emotion/react@11.14.0(@types/react@19.3.0)(react@19.3.0))(@emotion/styled@11.14.1(@emotion/react@11.14.0(@types/react@19.3.0)(react@19.3.0))(@types/react@19.3.0)(react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(@types/react@19.3.0)(react@19.3.0)
     devDependencies:
       '@changesets/cli':
         specifier: 'catalog:'
@@ -192,6 +188,9 @@ importers:
       '@emotion/styled':
         specifier: catalog:mui
         version: 11.14.1(@emotion/react@11.14.0(@types/react@19.3.0)(react@19.3.0))(@types/react@19.3.0)(react@19.3.0)
+      '@mui/icons-material':
+        specifier: catalog:mui
+        version: 9.4.0(@mui/material@9.4.0(@emotion/react@11.14.0(@types/react@19.3.0)(react@19.3.0))(@emotion/styled@11.14.1(@emotion/react@11.14.0(@types/react@19.3.0)(react@19.3.0))(@types/react@19.3.0)(react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(@types/react@19.3.0)(react@19.3.0)
       '@mui/material':
         specifier: catalog:mui
         version: 9.4.0(@emotion/react@11.14.0(@types/react@19.3.0)(react@19.3.0))(@emotion/styled@11.14.1(@emotion/react@11.14.0(@types/react@19.3.0)(react@19.3.0))(@types/react@19.3.0)(react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
@@ -242,6 +241,21 @@ importers:
       '@types/react':
         specifier: catalog:react
         version: 19.3.0
+      typescript:
+        specifier: 'catalog:'
+        version: 7.0.2
+
+  libs/events-hub:
+    devDependencies:
+      '@types/node':
+        specifier: 'catalog:'
+        version: 26.5.1
+      typescript:
+        specifier: 'catalog:'
+        version: 7.0.2
+
+  libs/shared-types:
+    devDependencies:
       typescript:
         specifier: 'catalog:'
         version: 7.0.2

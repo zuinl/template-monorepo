@@ -1,0 +1,26 @@
+{
+  "name": "@template/app-template",
+  "description": "Descrição da aplicação",
+  "scripts": {
+    "dev": "vp dev",
+    "check": "vp check",
+    "check:fix": "vp check --fix",
+    "lint": "vp lint",
+    "lint:fix": "vp lint --fix",
+    "fmt": "vp fmt . --write",
+    "test": "vp test watch",
+    "test:cov": "vp test --coverage",
+    "build": "vp build --config ./vite.config.ts"
+  },
+  "dependencies": {
+    "@emotion/react": "catalog:mui",
+    "@emotion/styled": "catalog:mui",
+    "@mui/icons-material": "catalog:mui",
+    "@mui/material": "catalog:mui",
+    "@types/react": "catalog:react",
+    "@types/react-dom": "catalog:react",
+    "react": "catalog:react",
+    "react-dom": "catalog:react",
+    "single-spa-react": "catalog:single-spa"
+  }
+}

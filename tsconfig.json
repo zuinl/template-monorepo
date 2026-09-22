@@ -9,8 +9,10 @@
     "rootDir": ".",
     "paths": {
       "@libs/design-system": ["./libs/design-system/src/index.ts"],
-      "@libs/vite-common": ["./libs/vite-common/src/index.ts"]
+      "@libs/vite-common": ["./libs/vite-common/src/index.ts"],
+      "@libs/events-hub": ["./libs/events-hub/src/index.ts"],
+      "@libs/shared-types/*": ["./libs/shared-types/src/*"]
     }
   },
-  "include": ["apps/**/*", "libs/**/*"]
+  "include": ["apps/**/*", "libs/**/*", "tools/**/*"]
 }

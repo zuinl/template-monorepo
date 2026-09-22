@@ -3,7 +3,6 @@
   "private": true,
   "type": "module",
   "devDependencies": {
-    "@changesets/cli": "catalog:",
     "typescript": "catalog:",
     "vite": "catalog:vite",
     "vite-plus": "catalog:vite"

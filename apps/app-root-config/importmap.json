@@ -9,7 +9,11 @@
     "@emotion/react": "https://esm.sh/@emotion/react@11.14.0?external=react",
     "@emotion/styled": "https://esm.sh/@emotion/styled@11.14.0",
     "@mui/material/": "https://esm.sh/@mui/material@9.4.0/",
+    "@mui/material": "https://esm.sh/@mui/material@9.4.0",
+    "@mui/icons-material/": "https://esm.sh/@mui/icons-material@9.4.0/",
+    "@mui/icons-material": "https://esm.sh/@mui/icons-material@9.4.0",
     "single-spa-react": "https://esm.sh/single-spa-react@6.0.2",
-    "@template/app-header": "http://localhost:4200/main.js"
+    "@template/app-header": "http://localhost:4200/main.js",
+    "@template/app-home": "http://localhost:4201/main.js"
   }
 }

@@ -1,6 +1,6 @@
 import { ThemeProvider as MUIThemeProvider, createTheme } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
-import { ReactNode, useEffect, useMemo, useState } from "react";
+import { ReactNode, useEffect, useState } from "react";
 import { subscribeToThemeChange, unsubscribeFromThemeChange } from "@libs/events-hub";
 import { ThemeOption } from "@libs/shared-types/theme/index.ts";
 import { LocalStorageKey } from "@libs/shared-types/local-storage/index.ts";
@@ -17,8 +17,11 @@ const lightTheme = createTheme({
   },
 });
 
-export const getCurrentTheme = (): ThemeOption =>
-  localStorage.getItem(LocalStorageKey.THEME ?? ThemeOption.LIGHT) as ThemeOption;
+export const getCurrentTheme = (): ThemeOption => {
+  const localStorageTheme = localStorage.getItem(LocalStorageKey.THEME);
+  if (localStorageTheme) return localStorageTheme as ThemeOption;
+  else return ThemeOption.LIGHT;
+};
 
 export function ThemeProvider({ ...props }: { children: ReactNode }) {
   const [currentTheme, setCurrentTheme] = useState<ThemeOption>(getCurrentTheme());
@@ -28,6 +31,7 @@ export function ThemeProvider({ ...props }: { children: ReactNode }) {
       const updatedTheme =
         getCurrentTheme() === ThemeOption.DARK ? ThemeOption.LIGHT : ThemeOption.DARK;
       localStorage.setItem(LocalStorageKey.THEME, updatedTheme);
+      console.log("Evento recebido: ", updatedTheme);
       setCurrentTheme(updatedTheme);
     };
 

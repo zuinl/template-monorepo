@@ -4,5 +4,9 @@ import { useAppContext } from "../contexts";
 export function Counter() {
   const { useCount } = useAppContext();
 
-  return <Button onClick={useCount.onCountClick}>Clicked {useCount.count} times</Button>;
+  return (
+    <Button onClick={useCount.onCountClick} variant="contained">
+      Clicked {useCount.count} times
+    </Button>
+  );
 }

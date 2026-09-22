@@ -7,3 +7,4 @@ export { Box } from "./components/box/index.tsx";
 export { Toolbar } from "./components/toolbar/index.tsx";
 export { Typography } from "./components/typography/index.tsx";
 export { IconButton } from "./components/icon-button/index.tsx";
+export { PageBase } from "./components/page-base/index.tsx";

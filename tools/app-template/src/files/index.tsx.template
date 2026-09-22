@@ -1,0 +1,10 @@
+import { Button } from "./components/button";
+import { AppProvider } from "./contexts";
+
+export const HeaderMain = () => {
+  return (
+    <AppProvider>
+      <Button></Button>
+    </AppProvider>
+  );
+};

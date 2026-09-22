@@ -1,0 +1,8 @@
+import { Button } from "@libs/design-system";
+import { useAppContext } from "../contexts";
+
+export function Button() {
+  const { useCount } = useAppContext();
+
+  return <Button onClick={useCount.onCountClick}>Clicked {useCount.count} times</Button>;
+}

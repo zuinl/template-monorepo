@@ -1,8 +1,14 @@
 import { defineConfig } from "vite-plus";
 
 export default defineConfig({
-  staged: {
-    "*": "vp check",
+  create: {
+    templates: [
+      {
+        name: "app-template",
+        description: "Cria uma nova aplicação no padrão do monorepo",
+        template: "./tools/app-template",
+      },
+    ],
   },
   fmt: {},
   lint: {

@@ -1,6 +1,5 @@
 {
   "name": "@template/app-header",
-  "private": "true",
   "description": "Cabeçalho principal da aplicação",
   "author": {
     "name": "Leonardo Zuin",

@@ -204,6 +204,36 @@ importers:
         specifier: catalog:single-spa
         version: 6.0.2(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(react@19.3.0)
 
+  apps/app-home:
+    dependencies:
+      '@emotion/react':
+        specifier: catalog:mui
+        version: 11.14.0(@types/react@19.3.0)(react@19.3.0)
+      '@emotion/styled':
+        specifier: catalog:mui
+        version: 11.14.1(@emotion/react@11.14.0(@types/react@19.3.0)(react@19.3.0))(@types/react@19.3.0)(react@19.3.0)
+      '@mui/icons-material':
+        specifier: catalog:mui
+        version: 9.4.0(@mui/material@9.4.0(@emotion/react@11.14.0(@types/react@19.3.0)(react@19.3.0))(@emotion/styled@11.14.1(@emotion/react@11.14.0(@types/react@19.3.0)(react@19.3.0))(@types/react@19.3.0)(react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(@types/react@19.3.0)(react@19.3.0)
+      '@mui/material':
+        specifier: catalog:mui
+        version: 9.4.0(@emotion/react@11.14.0(@types/react@19.3.0)(react@19.3.0))(@emotion/styled@11.14.1(@emotion/react@11.14.0(@types/react@19.3.0)(react@19.3.0))(@types/react@19.3.0)(react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
+      '@types/react':
+        specifier: catalog:react
+        version: 19.3.0
+      '@types/react-dom':
+        specifier: catalog:react
+        version: 19.3.0(@types/react@19.3.0)
+      react:
+        specifier: catalog:react
+        version: 19.3.0
+      react-dom:
+        specifier: catalog:react
+        version: 19.3.0(react@19.3.0)
+      single-spa-react:
+        specifier: catalog:single-spa
+        version: 6.0.2(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(react@19.3.0)
+
   apps/app-root-config:
     dependencies:
       single-spa:

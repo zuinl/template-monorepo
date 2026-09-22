@@ -1,10 +1,10 @@
-import { Button } from "./components/button";
+import { Counter } from "./components/counter";
 import { AppProvider } from "./contexts";
 
 export const Main = () => {
   return (
     <AppProvider>
-      <Button></Button>
+      <Counter></Counter>
     </AppProvider>
   );
 };

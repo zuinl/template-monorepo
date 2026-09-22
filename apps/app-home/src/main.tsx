@@ -19,7 +19,9 @@ const lifecycles = singleSpaReact({
   errorBoundary(err, info, props) {
     return (
       <ThemeProvider>
-        <FatalError />
+        <FatalError
+          message={`App: ${props.name} | Erro: ${err.message} - ${info.componentStack}`}
+        />
       </ThemeProvider>
     );
   },

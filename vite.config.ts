@@ -4,7 +4,7 @@ export default defineConfig({
   create: {
     templates: [
       {
-        name: "app-template",
+        name: "Application generator",
         description: "Cria uma nova aplicação no padrão do monorepo",
         template: "./tools/app-template",
       },

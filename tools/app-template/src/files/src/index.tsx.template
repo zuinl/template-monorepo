@@ -1,7 +1,7 @@
 import { Button } from "./components/button";
 import { AppProvider } from "./contexts";
 
-export const HeaderMain = () => {
+export const Main = () => {
   return (
     <AppProvider>
       <Button></Button>

@@ -1,10 +1,6 @@
 {
   "name": "@template/app-template",
-  "description": "Cabeçalho principal da aplicação",
-  "author": {
-    "name": "Leonardo Zuin",
-    "email": "leonardosoareszuin@gmail.com"
-  },
+  "description": "Descrição da aplicação",
   "scripts": {
     "dev": "vp dev",
     "check": "vp check",

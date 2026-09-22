@@ -14,5 +14,5 @@
       "@libs/shared-types/*": ["./libs/shared-types/src/*"]
     }
   },
-  "include": ["apps/**/*", "libs/**/*"]
+  "include": ["apps/**/*", "libs/**/*", "tools/**/*"]
 }

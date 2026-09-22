@@ -6,7 +6,10 @@ import { z } from "zod";
 
 import pkgJson from "../package.json" with { type: "json" };
 
-type TemplateDirectory = Record<string, TemplateEntry | undefined>;
+interface TemplateDirectory {
+  [key: string]: TemplateEntry | undefined;
+}
+
 type TemplateEntry = TemplateDirectory | string | [string] | [string, { executable?: boolean }];
 
 async function readTemplateDirectory(directoryPath: string): Promise<TemplateDirectory> {
@@ -24,7 +27,11 @@ async function readTemplateDirectory(directoryPath: string): Promise<TemplateDir
 
     const content = await readFile(childPath, "utf8");
     const executable = childStats.mode & 0o111 ? true : undefined;
-    directory[entry.name] = [content, { executable }];
+    const targetName = entry.name.endsWith(".template")
+      ? entry.name.slice(0, -".template".length)
+      : entry.name;
+
+    directory[targetName] = [content, { executable }];
   }
 
   return directory;
@@ -32,6 +39,11 @@ async function readTemplateDirectory(directoryPath: string): Promise<TemplateDir
 
 const templateDirectory = fileURLToPath(new URL("./files", import.meta.url));
 const templateFiles = await readTemplateDirectory(templateDirectory);
+
+function resolvePackageName(name: string) {
+  const normalizedName = name.trim();
+  return normalizedName.startsWith("@") ? normalizedName : `@template/${normalizedName}`;
+}
 
 export default createTemplate({
   about: {
@@ -46,11 +58,21 @@ export default createTemplate({
 
   // Generate files based on options
   async produce({ options }) {
+    const files = structuredClone(templateFiles);
+    const packageName = resolvePackageName(options.name);
+    const packageJsonEntry = files["package.json"];
+
+    if (Array.isArray(packageJsonEntry) && typeof packageJsonEntry[0] === "string") {
+      const updatedPackageJson = packageJsonEntry[0].replace(
+        /"name"\s*:\s*"[^"]+"/,
+        `"name": "${packageName}"`,
+      );
+
+      files["package.json"] = [updatedPackageJson, packageJsonEntry[1] ?? {}];
+    }
+
     return {
-      // see https://www.create.bingo/build/concepts/creations#files
-      files: templateFiles,
-      // see https://www.create.bingo/build/concepts/creations#scripts
-      // see https://www.create.bingo/build/concepts/creations#suggestions
+      files,
       suggestions: [
         // Optional: Add suggestions for users
       ],

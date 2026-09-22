@@ -1,20 +1,20 @@
 import { createContext, ReactNode, useContext, useMemo } from "react";
-import { useTheme } from "../hooks/use-theme";
+import { useDrawer } from "../hooks/use-drawer";
 
 type HeaderContextPayload = {
-  useTheme: ReturnType<typeof useTheme>;
+  useDrawer: ReturnType<typeof useDrawer>;
 };
 
 const HeaderContext = createContext({} as HeaderContextPayload);
 
 const HeaderProvider = ({ children }: { children: ReactNode }) => {
-  const themeData = useTheme();
+  const drawerData = useDrawer();
 
   const value: HeaderContextPayload = useMemo(
     () => ({
-      useTheme: themeData,
+      useDrawer: drawerData,
     }),
-    [themeData],
+    [drawerData],
   );
 
   return <HeaderContext.Provider value={value}>{children}</HeaderContext.Provider>;

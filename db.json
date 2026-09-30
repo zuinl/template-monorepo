@@ -1,4 +1,27 @@
 {
   "$schema": ["./node_modules/json-server/schema.json"],
-  "housesCount": { "count": 3 }
+  "housesCount": { "count": 3 },
+  "houses": [
+    {
+      "id": 1,
+      "block": "C",
+      "plot": "5",
+      "totalResidents": "5",
+      "status": "OCCUPIED"
+    },
+    {
+      "id": 2,
+      "block": "A",
+      "plot": "3",
+      "totalResidents": "0",
+      "status": "IN_CONSTRUCTION"
+    },
+    {
+      "id": 3,
+      "block": "B",
+      "plot": "1",
+      "totalResidents": "0",
+      "status": "EMPTY"
+    }
+  ]
 }

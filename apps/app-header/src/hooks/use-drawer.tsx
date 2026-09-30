@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { navigateToUrl } from "single-spa";
 import { MENU_ITEMS } from "../utils/menu-items";
+import { subscribeToHouseSelect, unsubscribeFromHouseSelect } from "@libs/events-hub";
 
 export const useDrawer = () => {
   const [open, setOpen] = useState(false);
@@ -21,6 +22,18 @@ export const useDrawer = () => {
 
     updateTitle();
   }, [window.location.pathname]);
+
+  useEffect(() => {
+    const houseSelectListener = (e: CustomEvent): void => {
+      setTitle(`Residência selecionada: ${e.detail}`);
+    };
+
+    subscribeToHouseSelect(houseSelectListener);
+
+    return () => {
+      unsubscribeFromHouseSelect(houseSelectListener);
+    };
+  }, []);
 
   const toggleDrawer = (open: boolean, event?: React.KeyboardEvent | React.MouseEvent): void => {
     if (

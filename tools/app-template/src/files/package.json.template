@@ -17,6 +17,7 @@
     "@emotion/styled": "catalog:mui",
     "@mui/icons-material": "catalog:mui",
     "@mui/material": "catalog:mui",
+    "@tanstack/react-query": "catalog:server",
     "@types/react": "catalog:react",
     "@types/react-dom": "catalog:react",
     "react": "catalog:react",

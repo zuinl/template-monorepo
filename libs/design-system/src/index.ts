@@ -1,9 +1,13 @@
 export { Button } from "./components/button/index.tsx";
+export { Card } from "./components/card/index.tsx";
+export { CardActions } from "./components/card-actions/index.tsx";
+export { CardContent } from "./components/card-content/index.tsx";
 export { FatalError } from "./components/fatal-error/index.tsx";
 export { FlexItem } from "./components/flex-item/index.tsx";
 export { ThemeProvider, getCurrentTheme } from "./theme.tsx";
 export { AppBar } from "./components/app-bar/index.tsx";
 export { Box } from "./components/box/index.tsx";
+export { Grid } from "./components/grid/index.tsx";
 export { Toolbar } from "./components/toolbar/index.tsx";
 export { Typography } from "./components/typography/index.tsx";
 export { IconButton } from "./components/icon-button/index.tsx";

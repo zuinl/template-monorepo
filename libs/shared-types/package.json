@@ -6,6 +6,8 @@
     "fmt": "vp fmt . --write"
   },
   "devDependencies": {
+    "@types/react": "catalog:react",
+    "react": "catalog:react",
     "typescript": "catalog:"
   }
 }

@@ -1,14 +1,12 @@
 import { useState } from "react";
+import { useGetHousesCount } from "../services/get-houses-count";
 
 export const useCount = () => {
-  const [count, setCount] = useState(0);
-
-  const onCountClick = () => {
-    setCount((prev) => prev + 1);
-  };
+  const [houses, setHouses] = useState(0);
+  useGetHousesCount({ onSuccess: (data) => setHouses(data.count) });
+  console.log(houses);
 
   return {
-    count,
-    onCountClick,
+    houses,
   };
 };

@@ -1,6 +1,7 @@
 import { AppBar, Box, Toolbar, Typography, IconButton, Drawer } from "@libs/design-system";
-import MenuIcon from "@mui/icons-material/Menu";
+import { Menu as MenuIcon } from "@mui/icons-material";
 import { useHeaderContext } from "../contexts";
+import { MENU_ITEMS } from "../utils/menu-items";
 
 export function Header() {
   const { useDrawer } = useHeaderContext();
@@ -21,7 +22,7 @@ export function Header() {
               <MenuIcon />
             </IconButton>
             <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-              Início
+              {useDrawer.title}
             </Typography>
           </Toolbar>
         </AppBar>
@@ -29,7 +30,8 @@ export function Header() {
       <Drawer
         open={useDrawer.open}
         toggleDrawer={useDrawer.toggleDrawer}
-        items={[{ id: "home", text: "Início", onClick: () => {} }]}
+        items={MENU_ITEMS}
+        onMenuClick={useDrawer.onMenuClick}
       />
     </>
   );

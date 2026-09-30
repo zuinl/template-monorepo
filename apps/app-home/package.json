@@ -21,6 +21,7 @@
     "@types/react-dom": "catalog:react",
     "react": "catalog:react",
     "react-dom": "catalog:react",
-    "single-spa-react": "catalog:single-spa"
+    "single-spa-react": "catalog:single-spa",
+    "swr": "catalog:server"
   }
 }

@@ -2,7 +2,11 @@
   "name": "monorepo-template",
   "private": true,
   "type": "module",
+  "scripts": {
+    "json-server": "pnpm dlx json-server db.json"
+  },
   "devDependencies": {
+    "json-server": "catalog:server",
     "typescript": "catalog:",
     "vite": "catalog:vite",
     "vite-plus": "catalog:vite"

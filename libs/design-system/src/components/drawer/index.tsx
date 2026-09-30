@@ -1,19 +1,21 @@
+import { MenuItem } from "@libs/shared-types/menu/index.ts";
 import Box from "@mui/material/Box";
 import MUIDrawer from "@mui/material/Drawer";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
-import { ReactNode } from "react";
 
 export function Drawer({
   toggleDrawer,
   open,
   items,
+  onMenuClick,
 }: {
   open: boolean;
   toggleDrawer: (open: boolean, event?: React.KeyboardEvent | React.MouseEvent) => void;
-  items: { text: string; icon?: ReactNode; id: string; onClick: (id: string) => void }[];
+  items: MenuItem[];
+  onMenuClick: (path: string) => void;
 }) {
   const list = () => (
     <Box
@@ -26,7 +28,10 @@ export function Drawer({
         {items.map((item) => {
           return (
             <ListItem key={item.id} disablePadding>
-              <ListItemButton>
+              <ListItemButton
+                sx={{ gap: 1, display: "flex", alignItems: "center" }}
+                onClick={() => onMenuClick(item.path)}
+              >
                 {item.icon}
                 <ListItemText primary={item.text} />
               </ListItemButton>

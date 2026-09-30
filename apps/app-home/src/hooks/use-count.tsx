@@ -1,10 +1,15 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useGetHousesCount } from "../services/get-houses-count";
 
 export const useCount = () => {
   const [houses, setHouses] = useState(0);
-  useGetHousesCount({ onSuccess: (data) => setHouses(data.count) });
-  console.log(houses);
+  const housesCountData = useGetHousesCount();
+
+  useEffect(() => {
+    if (housesCountData.data && housesCountData.data.count !== houses) {
+      setHouses(housesCountData.data.count);
+    }
+  }, [housesCountData.data]);
 
   return {
     houses,

@@ -3,16 +3,20 @@ import ReactDOMClient from "react-dom/client";
 import singleSpaReact from "single-spa-react";
 import { Main } from "./";
 import { FatalError, ThemeProvider, PageBase } from "@libs/design-system";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 const lifecycles = singleSpaReact({
   React,
   ReactDOMClient,
   rootComponent: () => {
+    const queryClient = new QueryClient();
     return (
       <ThemeProvider>
-        <PageBase>
-          <Main />
-        </PageBase>
+        <QueryClientProvider client={queryClient}>
+          <PageBase>
+            <Main />
+          </PageBase>
+        </QueryClientProvider>
       </ThemeProvider>
     );
   },

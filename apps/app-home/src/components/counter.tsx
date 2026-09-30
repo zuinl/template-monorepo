@@ -1,12 +1,12 @@
-import { Button } from "@libs/design-system";
+import { Typography } from "@libs/design-system";
 import { useAppContext } from "../contexts";
 
 export function Counter() {
   const { useCount } = useAppContext();
 
   return (
-    <Button onClick={useCount.onCountClick} variant="contained">
-      Clicked {useCount.count} times
-    </Button>
+    <Typography variant="body1">
+      Temos atualmente <strong>{useCount.houses}</strong> casas prontas
+    </Typography>
   );
 }

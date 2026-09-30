@@ -73,7 +73,7 @@ export function createMfeConfig(options: CreateMfeConfigOptions): UserConfig {
       "process.env.NODE_ENV": JSON.stringify(nodeEnv),
     },
     resolve: {
-      preserveSymlinks: true,
+      preserveSymlinks: false,
       tsconfigPaths: true,
     },
     server: {

@@ -1,21 +1,15 @@
-import useSwr from "swr";
+import { useQuery } from "@tanstack/react-query";
 
 export type useGetHousesCountRes = {
   count: number;
 };
 
-export const useGetHousesCount = ({
-  onSuccess,
-  onError,
-}: {
-  onSuccess?: (data: useGetHousesCountRes) => void;
-  onError?: () => void;
-}) => {
+export const useGetHousesCount = () => {
   const fetcher = () => fetch("http://localhost:3000/housesCount").then((res) => res.json());
 
-  const { data, error, isLoading } = useSwr<useGetHousesCountRes>("get-houses-count", fetcher, {
-    onSuccess,
-    onError,
+  const { data, error, isLoading } = useQuery<useGetHousesCountRes>({
+    queryKey: ["get-houses-count"],
+    queryFn: fetcher,
   });
 
   return {

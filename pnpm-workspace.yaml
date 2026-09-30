@@ -30,7 +30,7 @@ catalogs:
     "@mui/material": "^9.4.0"
     "@mui/icons-material": ^9.4.0
   server:
-    swr: ^2.5.1
+    "@tanstack/react-query": "^5.104.0"
     json-server: 1.0.0-beta.15
 overrides:
   vite@*: "catalog:vite"

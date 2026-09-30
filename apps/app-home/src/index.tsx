@@ -1,5 +1,6 @@
 import { FlexItem, Typography } from "@libs/design-system";
 import { AppProvider } from "./contexts";
+import { Counter } from "./components/counter";
 
 export const Main = () => {
   return (
@@ -8,9 +9,7 @@ export const Main = () => {
         <Typography variant="h4" color="primary">
           Página inicial do condomínio
         </Typography>
-        <Typography variant="body1">
-          Temos atualmente <strong>X</strong> casas prontas
-        </Typography>
+        <Counter />
       </FlexItem>
     </AppProvider>
   );

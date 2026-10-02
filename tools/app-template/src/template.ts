@@ -74,7 +74,7 @@ export default createTemplate({
     return {
       files,
       suggestions: [
-        // Optional: Add suggestions for users
+        "⚠️ ATENÇÃO: você precisa agora adicionar uma entrada em `libs/vite-common/src/ports.ts` com o nome da aplicação gerada e o número da porta para servir localmente (seguir sequência do arquivo) 🚪",
       ],
     };
   },
